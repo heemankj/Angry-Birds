@@ -1,24 +1,24 @@
 class Chain{
-constructor(objA,objB){
-var options={
-bodyA:objA,
-bodyB:objB,
-length:100,
-stiffness:0.5
-}
-this.chain= Matter.Constraint.create(options);
-World.add(world,this.chain)
-}
-display(){
-var pointA=this.chain.bodyA.position;
-var pointB=this.chain.bodyB.position;
-push();
-strokeWeight(5);
+    constructor(bodyA, ptB){
+        var options = {
+            bodyA: bodyA,
+            pointB: ptB,
+            stiffness: 0.01,
+            length: 10
+        }
+        this.chain = Constraint.create(options);
+        World.add(world, this.chain);
+    }
 
-
-line(pointA.x,pointA.y,pointB.x,pointB.y)
-pop();
-
-
-}
+    display(){
+        if(this.chain.bodyA){
+        var pointA = this.chain.bodyA.position;
+        var pointB = this.chain.pointB;
+        strokeWeight(4);
+        line(pointA.x, pointA.y, pointB.x, pointB.y);
+    }
+    }
+fly(){
+this.chain.bodyA=null
+} 
 }

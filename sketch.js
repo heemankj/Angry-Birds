@@ -71,3 +71,8 @@ Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY})
 function mouseReleased(){
     chain.fly();
 }
+function keyPressed(){
+if(keyCode===32){
+chain.attach(bird.body)
+}
+}

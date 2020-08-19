@@ -3,7 +3,7 @@ class Chain{
         var options = {
             bodyA: bodyA,
             pointB: ptB,
-            stiffness: 0.04,
+            stiffness: 0.05,
             length: 10
         }
         this.chain = Constraint.create(options);
@@ -42,4 +42,7 @@ class Chain{
 fly(){
 this.chain.bodyA=null
 } 
+attach(obj){
+this.chain.bodyA=obj
+}
 }
